@@ -35,15 +35,38 @@ Also known as neighborhood-based filtering, this method stores previous interact
 
 #### A) User-Based Collaborative Filtering:
 This approach seeks to locate comparable users, and it makes suggestions to a user based on what a similar user enjoyed. Cosine Similarity or Pearson Correlation are used to determine how similar users are. However, one of the major drawbacks of user-based filtering is that user preferences might vary over time, necessitating constant updates to these computations.calculating the similarity between items isn’t as straightforward as calculating the similarity between users. 
-The similarity between users can be calculated as -
-![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156031854-3eb9122e-adfe-4bae-b16a-21b2a4653558.png)
 
-![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156031942-63361d4d-1ef5-49f9-93a3-a8855d8e6031.png)
+Let’s take an example.
+![11](https://user-images.githubusercontent.com/69427575/156032590-8d0da31f-7705-42fa-acd5-2e87ebb31afd.PNG)
 
-The formula makes a lot more sense now. Item-based filtering avoids the dynamic preference problem posed by user-based filtering.
+Each row represents a user and each column a product. The last column is to record the similarity between a target user and a given user. Let User B be the target user. The similarity between any user and User B can be computed using Pearson Correlation only if they have given ratings to at least one common product. User D does not share any product rating with B therefore we can’t compute similarity. Also note that while User B and C have similar rating for Product C, the similarity is not that high, since it’s the only product they both have rated in common. Now, we are able to predict the rating that user B would give based on the similarity with other users. User B is most similar to User E, so the rating that user B would give to Product B would be close to 5.
+
+That was easy, right? But one of the main disadvantages of user-based filtering is user preferences can change over time, therefore these calculations have to be updated regularly.
+![12](https://user-images.githubusercontent.com/69427575/156032632-352bb8d6-62bb-40d8-a7d0-2b161b44a3a9.PNG)
 
 #### B) Item Based Collaborative Filtering
 In this type, new items are recommended to users based on their similarity with the items that the user has rated- highly in the past.
+
+![13](https://user-images.githubusercontent.com/69427575/156032708-9ead67a8-d948-44b0-9253-72a93f2b1ecf.PNG)
+Now, calculating the similarity between items isn’t as straightforward as calculating the similarity between users. The similarity between users can be calculated as -
+![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156032816-e8dd0e56-31ea-4998-afb4-31176667405f.png)
+
+Well, don’t get baffled. Let’s break down the steps below:
+
+If you want to compute the similarity between Product A and B, first multiply all the ratings the users have given to these products and sum the results.
+![14](https://user-images.githubusercontent.com/69427575/156032867-95ce3c49-7c75-4d0f-ade1-e18707b3bfa2.PNG)
+
+Now, we’ll square the ratings of Product A and B separately and take the sum of these squares. Since we are only dealing with Product A and B at the moment, I’ll remove C and D from the table for simplicity.
+ ![15](https://user-images.githubusercontent.com/69427575/156032925-26d6e90c-d740-447e-8766-86c1686c5c72.PNG)
+ On multiplying the square roots, we get 56. Now, after dividing 47 with 56 we get 0.83 which is in fact the similarity between product A and B.
+
+Similarly, you can compute the similarity between any 2 products and recommend a product similar to the product the user has rated before.
+Now, we’ll take the square roots of the sum of these squares for A and B and multiply them.
+
+On multiplying the square roots, we get 56. Now, after dividing 47 with 56 we get 0.83 which is in fact the similarity between product A and B.
+Similarly, you can compute the similarity between any 2 products and recommend a product similar to the product the user has rated before.
+
+![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156033080-aa43a438-3ca4-4d72-9e0e-01a0a49b07c7.png)
 
 ### Limitations of Memory-Based Collaborative Filtering Recommendation Method
 - Memory-based filtering techniques are difficult to scale; even with 24K unique users, it took a long time to discover users that were similar to a single user.
