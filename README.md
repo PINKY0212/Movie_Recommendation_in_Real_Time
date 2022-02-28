@@ -8,57 +8,63 @@ For Example, Facebook, utilizes your social media activity to enhance your newsf
 Different types of recommender systems and their use cases. There are primarily two techniques for building recommendation engines, the others are either extensions or hybrid recommender systems:
 
 ### 1) Content-Based Filtering
-The main idea here is to suggest items based on a particular item. For example, when you are building a movie recommendation system, it would take into account a user’s preference for a movie using metrics such as ratings and then use item metadata, such as genre, director, description of the movie, cast, and crew, etc to find movies similar to the ones that a user has liked.
+The fundamental concept is to provide suggestions based on a certain item. When creating a movie recommendation system, for example, you would take into account a user's preference for a movie using metrics like ratings, and then use item metadata like genre, director, movie description, cast, and crew, and so on to find movies that are similar to the ones that a user has enjoyed.
 
-Content-based recommendation systems work more closely with item features or attributes rather than user data. They predict the behavior of a user based on the items they react to. A classic problem that millennials have today is finding a good movie to binge-watch over the weekend without having to do too much research. Through this project we can solve this problem recommender systems machine learning for millennials by helping them find a movie that they are most likely to enjoy.A movie can have various attributes like description, cast, crew, director, keywords, etc. These attributes help in finding similarities with other movies.
+Instead than using user data, content-based recommendation systems focus on item traits or attributes. They can forecast a user's behaviour based on the objects they react to. Finding a decent movie to binge-watch over the weekend without having to do too much research is a typical challenge that millennials face nowadays. We can tackle this problem recommender systems machine learning for millennials by assisting them in finding a movie that they are most likely to appreciate through our initiative. A film might have a variety of qualities, such as a description, cast, crew, director, keywords, and so on. These characteristics aid in the discovery of parallels with other films.
+![Recommendation+Engine+Python+Content+Based](https://user-images.githubusercontent.com/69427575/156031754-289839b0-a722-48fd-9a2d-b328e471defc.png)
 
 ### Benefits of Content-Based Recommender Systems
-- In content-based filtering, the machine learning model needs no information about the user to make recommendations. It only needs to know the interests of the user which makes it easier to scale the model.
+- In content-based filtering, the machine learning model makes suggestions without knowing anything about the user. It simply needs to know the user's interests, which makes scaling the model easy.
 
-- It also does not have a “cold-start problem”, since it recommends movies based on their metadata and would not weigh them according to their popularity.
+- It also doesn't have a "cold-start problem," because it recommends movies based on metadata rather than popularity.
 
 ### Limitations of Content-Based Recommender Systems
-- In this example, we used movie overview, genre, and keywords. The quality of the recommendation is dependent on these hand-engineered features and thus requires a good amount of domain knowledge.
-- The model has absolutely no way to recommend the user something outside their range of interests. It is not capable of capturing tastes and generating recommendations across genres.
+- We utilised a movie synopsis, genre, and keywords in this example. These hand-engineered elements determine the quality of the advice, which necessitates a fair deal of topic knowledge.
+- The model has no method of recommending something to the user that is outside of their interests. It is unable to recognise tastes and make suggestions across genres.
 
 ### 2) Collaborative Filtering Recommender Systems
-The movies recommended using the first approach are not really personalized in the sense that content-based recommendation engines do not capture the personal tastes and biases of a user. The recommendations are totally based on a particular item, two users with very different tastes except for one common item of interest will get the same results.
+The movies advised using the first method aren't truly customised since content-based recommendation algorithms don't account for a user's unique preferences and prejudices. Because the suggestions are entirely based on a single item, two people with completely diverse interests will obtain the same results if they share one common interest.
 
-To deal with these problems, another method is collaborative filtering recommender systems. The collaborative filtering technique depends solely on the historical preferences of a user and the interaction between a user and an item. User preference is studied in two ways:  explicitly- this is the rating or feedback given to an item by the user explicitly, implicitly wherein a user preference is noted in terms of clicks, views, hovering time, etc.The collaborative filtering recommendation technique depends on finding similar users to a target user to make personalized recommendations. Collaborative filtering recommen,der systems do not require item metadata like content-based recommendation systems. It relies solely on past user-item interactions to render new recommendations.
+Collaborative filtering recommender systems are another approach for dealing with these issues. The collaborative filtering approach is completely based on a user's previous choices and their involvement with an item. User preference is examined in two ways: overtly, where a user preference is noted in terms of clicks, views, hovering time, and so on; and implicitly, where a user preference is noted in terms of clicks, views, hovering time, and so on. To produce tailored suggestions, the collaborative filtering recommendation approach looks for users who are similar to the target user. Unlike content-based recommendation systems, collaborative filtering recommendation systems do not require item information. It generates fresh suggestions exclusively based on previous user-item interactions.
 
 There are basically two types of collaborative filtering recommendation methods based on whether they assume there is an underlying model governing the data.
 
 ### 1) Memory-Based Collaborative Filtering
-Also known as neighborhood-based filtering in which past interactions between a user and item are stored in user-items interaction matrix. The recommendations are made either in a user-based or item-based fashion.
-
+Also known as neighborhood-based filtering, this method stores previous interactions between a user and an object in a user-item interaction matrix. The recommendations are either based on the user or on the item.
+![Memory+Based+Collaborative+Filtering](https://user-images.githubusercontent.com/69427575/156031798-dc41425d-fa81-4699-9dee-a5ad63ce9769.png)
 
 #### A) User-Based Collaborative Filtering:
-This method aims at finding similar users and recommendations are made to a user based on what a similar user has liked. The similarity between users is calculated using either Cosine Similarity or Pearson Correlation. But one of the main disadvantages of user-based filtering is user preferences can change over time, therefore these calculations have to be updated regularly.
+This approach seeks to locate comparable users, and it makes suggestions to a user based on what a similar user enjoyed. Cosine Similarity or Pearson Correlation are used to determine how similar users are. However, one of the major drawbacks of user-based filtering is that user preferences might vary over time, necessitating constant updates to these computations.calculating the similarity between items isn’t as straightforward as calculating the similarity between users. 
+The similarity between users can be calculated as -
+![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156031854-3eb9122e-adfe-4bae-b16a-21b2a4653558.png)
 
+![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156031942-63361d4d-1ef5-49f9-93a3-a8855d8e6031.png)
+The formula makes a lot more sense now. Item-based filtering avoids the dynamic preference problem posed by user-based filtering.
 
 #### B) Item Based Collaborative Filtering
 In this type, new items are recommended to users based on their similarity with the items that the user has rated- highly in the past.
 
 ### Limitations of Memory-Based Collaborative Filtering Recommendation Method
-- Memory-based filtering systems do not scale easily, even with 24K distinct users it took a while to find similar users to a single user.
-- When using huge datasets, the memory-based collaborative filtering technique is close to impractical.
-- This technique also has the “cold-start” problem, it’s hard to get recommendations for new users or recommend new products.
+- Memory-based filtering techniques are difficult to scale; even with 24K unique users, it took a long time to discover users that were similar to a single user.
+- Memory-based collaborative filtering is nearly impracticable when dealing with large datasets.
+- This method also suffers from the "cold-start" problem, making it difficult to obtain suggestions for new users or to suggest new goods.
 
 ### 2) Model-Based Collaborative Filtering Recommender System
-As in the memory-based recommender system, the user-item interaction matrix is very sparse, to use it more efficiently we can reduce or compress the user-items interaction matrix into two matrices using a model.  The huge sparse item matrix is decomposed into two smaller dense matrices- a user-factor matrix that has user representations and an item-factor matrix that has item representation using Matrix Factorization Techniques for Recommender Systems.
+Because the user-item interaction matrix is sparse, like in the memory-based recommender system, we may condense or compress it into two matrices using a model to make it more efficient. Using Matrix Factorization Techniques for Recommender Systems, the large sparse item matrix is divided into two smaller dense matrices: a user-factor matrix with user representations and an item-factor matrix with item representations.
 
+The above-mentioned factor is only a latent factor that captures the similarity between users and products. A latent factor is a trait or notion that a user or an item may possess. A latent component may be used to indicate the genre of a movie in a dataset. Matrix Factorization may be done using a variety of techniques, including Singular Value Decomposition (SVD), Principal Component Analysis (PCA), and Non-Negative Matrix Factorization (NMF).
+![Matrix+Factorization+for+Recommender+Systems](https://user-images.githubusercontent.com/69427575/156032053-d3a86c63-9e71-42cd-b429-32d510e17dca.png)
 
-The factor that I have mentioned above is nothing but a latent factor that captures the similarity between users and items. A latent factor can represent a property or concept that a user or an item might have. For a movie’s dataset, latent factor can represent the genre the movie belongs to. There are many algorithms for Matrix Factorization like Singular Value Decomposition(SVD), Principal Component Analysis(PCA), and Non-Negative Matrix Factorization(NMF).
+For matrix factorization of the recommender system, the SVD technique was utilised. The recommendation model is transformed into an optimization problem, and measures like Root Mean Squared Error are used to assess how well we are at predicting a user's rating of an item (RMSE). SVD uses latent variables to reduce the dimensions of our user-item interaction matrix. Users and things are mapped in a latent space with dimension d, which helps us better comprehend their connection.
 
-Here used the SVD algorithm for matrix factorization of the recommender system. The recommendation model is turned into an optimization problem and measured how good we are in predicting the ratings of an item for a user by metrics like Root Mean Squared Error(RMSE).  SVD  decreases the dimensions of our user-items interaction matrix by using latent factors. We map users and items in a latent space with dimension d, which in turn helps us better understand the relationship between them. 
-
-There can be useful features in the data like a User X who is a girl and a teenager who likes funny and female-oriented movies. The Princess Diaries is funny and female-oriented and would be a good recommendation. However, we do not hand engineer these features, we let the model discover these hidden representations of user interests and item attributes.
+There may be valuable characteristics in the data, such as a User X who is a girl and a teen who enjoys comedies and female-oriented films. The Princess Diaries is a wonderful choice since it is hilarious and female-oriented. We do not, however, hand-code these characteristics; instead, we let the model to uncover these underlying representations of user preferences and item properties.
+![Collaborative+Filtering+Python](https://user-images.githubusercontent.com/69427575/156032020-332b37a7-e109-497f-8c8d-3e3f8f31b9ff.png)
 
 ### Advantages of Memory-Based Collaborative Filtering Recommender Systems
-- They are easy to scale and can be used to work on super large datasets.
-- Overfitting can be avoided if the data on which we have trained is representative of the general population.
-- The prediction speed is much faster than memory-based models- since you only query the model, not the whole dataset.
+- They're simple to grow and can handle extremely massive datasets.
+- If the data on which we trained is representative of the overall population, overfitting may be avoided.
+- Because you simply query the model, not the entire dataset, the prediction speed is substantially faster than memory-based models.
 
 ### Disadvantages of Memory-Based Collaborative Filtering Recommender Systems
-- The quality of predictions is solely dependent on the quality of the model built.
-- It is not very intuitive especially if you use Deep Learning models.
+- The accuracy of forecasts is solely determined by the model used to make them.
+- It's not particularly user-friendly, especially when using Deep Learning models.
