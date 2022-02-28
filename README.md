@@ -39,6 +39,7 @@ The similarity between users can be calculated as -
 ![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156031854-3eb9122e-adfe-4bae-b16a-21b2a4653558.png)
 
 ![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156031942-63361d4d-1ef5-49f9-93a3-a8855d8e6031.png)
+
 The formula makes a lot more sense now. Item-based filtering avoids the dynamic preference problem posed by user-based filtering.
 
 #### B) Item Based Collaborative Filtering
@@ -53,11 +54,13 @@ In this type, new items are recommended to users based on their similarity with 
 Because the user-item interaction matrix is sparse, like in the memory-based recommender system, we may condense or compress it into two matrices using a model to make it more efficient. Using Matrix Factorization Techniques for Recommender Systems, the large sparse item matrix is divided into two smaller dense matrices: a user-factor matrix with user representations and an item-factor matrix with item representations.
 
 The above-mentioned factor is only a latent factor that captures the similarity between users and products. A latent factor is a trait or notion that a user or an item may possess. A latent component may be used to indicate the genre of a movie in a dataset. Matrix Factorization may be done using a variety of techniques, including Singular Value Decomposition (SVD), Principal Component Analysis (PCA), and Non-Negative Matrix Factorization (NMF).
+
 ![Matrix+Factorization+for+Recommender+Systems](https://user-images.githubusercontent.com/69427575/156032053-d3a86c63-9e71-42cd-b429-32d510e17dca.png)
 
 For matrix factorization of the recommender system, the SVD technique was utilised. The recommendation model is transformed into an optimization problem, and measures like Root Mean Squared Error are used to assess how well we are at predicting a user's rating of an item (RMSE). SVD uses latent variables to reduce the dimensions of our user-item interaction matrix. Users and things are mapped in a latent space with dimension d, which helps us better comprehend their connection.
 
 There may be valuable characteristics in the data, such as a User X who is a girl and a teen who enjoys comedies and female-oriented films. The Princess Diaries is a wonderful choice since it is hilarious and female-oriented. We do not, however, hand-code these characteristics; instead, we let the model to uncover these underlying representations of user preferences and item properties.
+
 ![Collaborative+Filtering+Python](https://user-images.githubusercontent.com/69427575/156032020-332b37a7-e109-497f-8c8d-3e3f8f31b9ff.png)
 
 ### Advantages of Memory-Based Collaborative Filtering Recommender Systems
