@@ -51,7 +51,6 @@ In this type, new items are recommended to users based on their similarity with 
 Now, calculating the similarity between items isn’t as straightforward as calculating the similarity between users. The similarity between users can be calculated as -
 ![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156032816-e8dd0e56-31ea-4998-afb4-31176667405f.png)
 
-Well, don’t get baffled. Let’s break down the steps below:
 
 If you want to compute the similarity between Product A and B, first multiply all the ratings the users have given to these products and sum the results.
 ![14](https://user-images.githubusercontent.com/69427575/156032867-95ce3c49-7c75-4d0f-ade1-e18707b3bfa2.PNG)
@@ -62,9 +61,6 @@ Now, we’ll square the ratings of Product A and B separately and take the sum o
 
 Similarly, you can compute the similarity between any 2 products and recommend a product similar to the product the user has rated before.
 Now, we’ll take the square roots of the sum of these squares for A and B and multiply them.
-
-On multiplying the square roots, we get 56. Now, after dividing 47 with 56 we get 0.83 which is in fact the similarity between product A and B.
-Similarly, you can compute the similarity between any 2 products and recommend a product similar to the product the user has rated before.
 
 ![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156033080-aa43a438-3ca4-4d72-9e0e-01a0a49b07c7.png)
 
