@@ -1,17 +1,29 @@
 # Product_Recommendation_in_Real_Time
 
-A recommender system is a machine learning algorithm that predicts a user's future preferences for a set of offers personalized recommendations based on that prediction.It's similar to a firm salesperson who understands what a consumer could appreciate based on their past purchases and preferences. Every program you use on the internet records your behaviour, including how you interact with things, what you look for, who you communicate with, and so on. It won't be an exaggeration to suggest that, with the correct tool in hand, these applications will know you better than you know yourself. 
+A recommender system is a machine learning algorithm that predicts a user's future preferences for a set of offers personalized recommendations based on that prediction.It's similar to a firm salesperson who understands what a consumer could appreciate based on their past purchases and preferences. Every program you use on the internet records your behaviour, including how you interact with things, what you look for, who you communicate with, and so on. It won't be an exaggeration to suggest that, with the correct tool in hand, these applications will know you better than you know yourself. Netflix, for example, utilizes algorithms that filter content based on each individual user profile and determine which shows/movies you may like, YouTube uses its algorithms to choose which video to play next. 
 
-For Example, Facebook, utilizes your social media activity to enhance your newsfeed and determine which advertisements to show, YouTube uses its algorithms to choose which video to play next. They also serve as information filtering systems, removing extraneous content and allowing users to have a more tailored experience with whichever service they are using.
 
 ## Types of Recommender Systems
-Different types of recommender systems and their use cases. There are primarily two techniques for building recommendation engines, the others are either extensions or hybrid recommender systems:
+There are primarily two techniques for building recommendation engines, the others are either extensions or hybrid recommender systems: Content-Based Filtering & Collaborative Filtering Recommender.Using the Sample Data from Microsoft Machine Learning Studio(classic), I have trained, scored and evaluated the dataset from Matchbox Recommender Module created 4 different metrics to create a list of movie recommendations for each user depending upon the titles and rating.Below is the Screenshot of Azure Pipelines created for 4 types of recommendation metrics.
+
+![ss1](https://user-images.githubusercontent.com/69427575/157966569-f473b7b6-1286-4460-b174-abb70830307c.PNG)
+
+To evaluate the accuracy of the predictions the Evaluate Recommender module compares the predictions of a recommendation model with the corresponding “ground truth” data by computing the average normalized discounted cumulative gain (NDCG) for each model.The training data is approximately 225,000 ratings for 15,742 movies by 26,770 users.This project utilizes collaborative and content-based filtering and matrix factorization to create a Movie Recommendation System.
 
 ### 1) Content-Based Filtering
 The fundamental concept is to provide suggestions based on a certain item. When creating a movie recommendation system, for example, you would take into account a user's preference for a movie using metrics like ratings, and then use item metadata like genre, director, movie description, cast, and crew, and so on to find movies that are similar to the ones that a user has enjoyed.
 
-Instead than using user data, content-based recommendation systems focus on item traits or attributes. They can forecast a user's behaviour based on the objects they react to. Finding a decent movie to binge-watch over the weekend without having to do too much research is a typical challenge that millennials face nowadays. We can tackle this problem recommender systems machine learning for millennials by assisting them in finding a movie that they are most likely to appreciate through our initiative. A film might have a variety of qualities, such as a description, cast, crew, director, keywords, and so on. These characteristics aid in the discovery of parallels with other films.
-![Recommendation+Engine+Python+Content+Based](https://user-images.githubusercontent.com/69427575/156031754-289839b0-a722-48fd-9a2d-b328e471defc.png)
+In this content-based filtering based on related items performed best.This is the Azure Pipeline specifically for Content--Based Recommendation System. And Further i Have created a Azure AI WebService for this type of recommendation. 
+
+![ss2](https://user-images.githubusercontent.com/69427575/157967136-407fe3fd-d715-404b-a3be-80037f1dfc04.PNG)
+![ss3](https://user-images.githubusercontent.com/69427575/157967160-402a0abf-08b7-43d5-81cc-1d5407158f7b.PNG)
+Once, the webserice is deployed, we get Test Preview of the service and then by creating new web service experiencce we get request-response and APIKey to use this web service into Azure Machine Learning Excel.
+![ss3](https://user-images.githubusercontent.com/69427575/157967509-f5e29c8c-739c-42c1-b0f0-0a44fb247f72.PNG)
+![ss4](https://user-images.githubusercontent.com/69427575/157967537-31f72857-4d3d-4e66-ab8f-14a62adf68cd.PNG)
+![ss5](https://user-images.githubusercontent.com/69427575/157967575-ee143cec-7436-4629-a366-3299adf64de4.PNG)
+
+I have also publised this Web Service into Azure AI gallery.The gallery link is below:
+https://gallery.cortanaintelligence.com/Experiment/Movie-Recommendation-Using-Content-Based-Filtering-System
 
 ### Benefits of Content-Based Recommender Systems
 - In content-based filtering, the machine learning model makes suggestions without knowing anything about the user. It simply needs to know the user's interests, which makes scaling the model easy.
@@ -36,33 +48,21 @@ Also known as neighborhood-based filtering, this method stores previous interact
 #### A) User-Based Collaborative Filtering:
 This approach seeks to locate comparable users, and it makes suggestions to a user based on what a similar user enjoyed. Cosine Similarity or Pearson Correlation are used to determine how similar users are. However, one of the major drawbacks of user-based filtering is that user preferences might vary over time, necessitating constant updates to these computations.calculating the similarity between items isn’t as straightforward as calculating the similarity between users. 
 
-Let’s take an example.
-![11](https://user-images.githubusercontent.com/69427575/156032590-8d0da31f-7705-42fa-acd5-2e87ebb31afd.PNG)
-
-Each row represents a user and each column a product. The last column is to record the similarity between a target user and a given user. Let User B be the target user. The similarity between any user and User B can be computed using Pearson Correlation only if they have given ratings to at least one common product. User D does not share any product rating with B therefore we can’t compute similarity. Also note that while User B and C have similar rating for Product C, the similarity is not that high, since it’s the only product they both have rated in common. Now, we are able to predict the rating that user B would give based on the similarity with other users. User B is most similar to User E, so the rating that user B would give to Product B would be close to 5.
-
-That was easy, right? But one of the main disadvantages of user-based filtering is user preferences can change over time, therefore these calculations have to be updated regularly.
-![12](https://user-images.githubusercontent.com/69427575/156032632-352bb8d6-62bb-40d8-a7d0-2b161b44a3a9.PNG)
-
 #### B) Item Based Collaborative Filtering
 In this type, new items are recommended to users based on their similarity with the items that the user has rated- highly in the past.
 
-![13](https://user-images.githubusercontent.com/69427575/156032708-9ead67a8-d948-44b0-9253-72a93f2b1ecf.PNG)
-Now, calculating the similarity between items isn’t as straightforward as calculating the similarity between users. The similarity between users can be calculated as -
-![Cosine+Similarity+Dot+Product+of+Vectors](https://user-images.githubusercontent.com/69427575/156032816-e8dd0e56-31ea-4998-afb4-31176667405f.png)
+In this content-based filtering based on related items performed best.This is the Azure Pipeline specifically for Content--Based Recommendation System. And Further i Have created a Azure AI WebService for this type of recommendation. 
 
+![ss6](https://user-images.githubusercontent.com/69427575/157967997-d5b88a58-db00-4d8b-90d5-07ca0600f74f.PNG)
+![ss8](https://user-images.githubusercontent.com/69427575/157968163-7ca71bf4-34e9-45d8-bfe9-8a58fc2c3ff5.PNG)
 
-If you want to compute the similarity between Product A and B, first multiply all the ratings the users have given to these products and sum the results.
-![14](https://user-images.githubusercontent.com/69427575/156032867-95ce3c49-7c75-4d0f-ade1-e18707b3bfa2.PNG)
+Once, the webserice is deployed, we get Test Preview of the service and then by creating new web service experiencce we get request-response and APIKey to use this web service into Azure Machine Learning Excel.
+![ss7](https://user-images.githubusercontent.com/69427575/157968077-eac57f08-2a6d-4d65-ad98-3675bc2efa27.PNG)
+![ss9](https://user-images.githubusercontent.com/69427575/157968279-8ffbdf3c-449a-425f-9a6d-78a735cf978d.PNG)
+![ss10](https://user-images.githubusercontent.com/69427575/157968353-6ec64cd1-8189-41ad-a99d-f33340beaf78.PNG)
 
-Now, we’ll square the ratings of Product A and B separately and take the sum of these squares. Since we are only dealing with Product A and B at the moment, I’ll remove C and D from the table for simplicity.
- ![15](https://user-images.githubusercontent.com/69427575/156032925-26d6e90c-d740-447e-8766-86c1686c5c72.PNG)
- On multiplying the square roots, we get 56. Now, after dividing 47 with 56 we get 0.83 which is in fact the similarity between product A and B.
-
-Similarly, you can compute the similarity between any 2 products and recommend a product similar to the product the user has rated before.
-Now, we’ll take the square roots of the sum of these squares for A and B and multiply them.
-
-![Calculating+Similarity](https://user-images.githubusercontent.com/69427575/156033080-aa43a438-3ca4-4d72-9e0e-01a0a49b07c7.png)
+I have also publised this Web Service into Azure AI gallery.The gallery link is below:
+https://gallery.cortanaintelligence.com/Experiment/Movie-Recommendation-Using-Collaborative-Filtering-System-Items-Approach
 
 ### Limitations of Memory-Based Collaborative Filtering Recommendation Method
 - Memory-based filtering techniques are difficult to scale; even with 24K unique users, it took a long time to discover users that were similar to a single user.
