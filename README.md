@@ -133,3 +133,11 @@ There may be valuable characteristics in the data, such as a User X who is a gir
 - The accuracy of forecasts is solely determined by the model used to make them.
 
 -  It's not particularly user-friendly, especially when using Deep Learning models.
+
+## Second Approach for Recommender System
+
+- For this I have used Jyputer Notebook for the second approach, using other datasets such as movies and credits files.
+
+- Content-Based Recommender.ipynb file has code for Content-Based Recommender System which is made on Kaggle using kaggle dataset.This uses Vectorizer for filtering data and def function for recommendation check.
+
+*Note: All the datasets used in this project is also available in this repositery.*
