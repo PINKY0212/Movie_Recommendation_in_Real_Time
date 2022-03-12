@@ -35,6 +35,7 @@ Before creating a new service, Testing of webservice is all done by manual input
 Once, the webserice is deployed, we get Test Preview of the service and then by creating New Web Service Experiencce we get request-response and APIKey to use this web service into Azure Machine Learning in Excel.Also tested the sample data after creation of Webservice.
 
 ![ss4](https://user-images.githubusercontent.com/69427575/157967537-31f72857-4d3d-4e66-ab8f-14a62adf68cd.PNG)
+
 ![ss5](https://user-images.githubusercontent.com/69427575/157967575-ee143cec-7436-4629-a366-3299adf64de4.PNG)
 
 Also checked this Webservice on Microsoft Excel - Azure Machine Learning, output is shown on:
@@ -84,6 +85,7 @@ Before creating a new service, Testing of WebService is all done by manual input
 Once, the WebSerice is deployed, we get Test Preview of the service and then by creating New Web Service Experiencce we get Request-Response and APIKey to use this Web Service into Azure Machine Learning Excel ss a Product.Also tested the sample data after creation of Webservice.
 
 ![ss9](https://user-images.githubusercontent.com/69427575/157968279-8ffbdf3c-449a-425f-9a6d-78a735cf978d.PNG)
+
 ![ss10](https://user-images.githubusercontent.com/69427575/157968353-6ec64cd1-8189-41ad-a99d-f33340beaf78.PNG)
 
 Also checked this Webservice on Microsoft Excel- Azure Machine Learning, output is shown on:
@@ -108,6 +110,7 @@ The above-mentioned factor is only a latent factor that captures the similarity 
 For matrix factorization of the recommender system, the SVD technique was utilised. The recommendation model is transformed into an optimization problem, and measures like Root Mean Squared Error are used to assess how well we are at predicting a user's rating of an item (RMSE). SVD uses latent variables to reduce the dimensions of our user-item interaction matrix. Users and things are mapped in a latent space with dimension d, which helps us better comprehend their connection.This approach utilized Related Item type as kind of Recommendation prediction and Recommendation item selection is done from Rated Items in the Score Matchbox of the Recommender Module for the Item-factor Matrix.And Related Users type as kind of Recommendation prediction and Recommendation item selection is done from Users tha rated Items in the Score Matchbox of the Recommender Module for the User-factor Matrix.The output of these specifications of both metrics is shown.
 
 ![2022-03-12 (8)](https://user-images.githubusercontent.com/69427575/158028324-e93b62ac-e1d2-4cb5-867f-8cb27a12ce0d.png)
+
 ![2022-03-12 (10)](https://user-images.githubusercontent.com/69427575/158028329-3d3f8f38-9db5-4036-b07a-9e9adc1da8fc.png)
 
 There may be valuable characteristics in the data, such as a User X who is a girl and a teen who enjoys comedies and female-oriented films. The Princess Diaries is a wonderful choice since it is hilarious and female-oriented. We do not, however, hand-code these characteristics; instead, we let the model to uncover these underlying representations of user preferences and item properties.
