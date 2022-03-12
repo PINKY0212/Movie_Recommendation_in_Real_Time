@@ -143,4 +143,4 @@ There may be valuable characteristics in the data, such as a User X who is a gir
 ![ss13](https://user-images.githubusercontent.com/69427575/158031135-7d7f8c1a-f916-441f-ba0a-75706a1546a5.PNG)
 
 
-*Note: All the datasets used in this project is also available in this repositery.*
+*Note: All the datasets used in this project is also available in this repository.*
