@@ -128,4 +128,4 @@ There may be valuable characteristics in the data, such as a User X who is a gir
 ### Disadvantages of Memory-Based Collaborative Filtering Recommender Systems
 - The accuracy of forecasts is solely determined by the model used to make them.
 
-- It's not particularly user-friendly, especially when using Deep Learning models.
+-  It's not particularly user-friendly, especially when using Deep Learning models.
