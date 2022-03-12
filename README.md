@@ -38,7 +38,9 @@ Once, the webserice is deployed, we get Test Preview of the service and then by 
 
 ![ss5](https://user-images.githubusercontent.com/69427575/157967575-ee143cec-7436-4629-a366-3299adf64de4.PNG)
 
-Also checked this Webservice on Microsoft Excel - Azure Machine Learning, output is shown on:
+Also checked this Webservice on Microsoft Excel - Azure Machine Learning, output is shown:
+
+![ss11](https://user-images.githubusercontent.com/69427575/158030768-ce6476ca-ead5-40fa-94cd-88343fefa3dd.PNG)
 
 I have also publised this Web Service into Azure AI gallery.The gallery link is:
 https://gallery.cortanaintelligence.com/Experiment/Movie-Recommendation-Using-Content-Based-Filtering-System
@@ -88,7 +90,9 @@ Once, the WebSerice is deployed, we get Test Preview of the service and then by 
 
 ![ss10](https://user-images.githubusercontent.com/69427575/157968353-6ec64cd1-8189-41ad-a99d-f33340beaf78.PNG)
 
-Also checked this Webservice on Microsoft Excel- Azure Machine Learning, output is shown on:
+Also checked this Webservice on Microsoft Excel- Azure Machine Learning, output is shown:
+
+![ss12](https://user-images.githubusercontent.com/69427575/158030779-2abd9f55-458b-4d52-a9eb-959fc9ae707b.PNG)
 
 I have also publised this Web Service into Azure AI gallery.The gallery link is:
 https://gallery.cortanaintelligence.com/Experiment/Movie-Recommendation-Using-Collaborative-Filtering-System-Items-Approach
