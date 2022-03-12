@@ -11,13 +11,13 @@ There are primarily two techniques for building recommendation engines, the othe
 
 The Six Types of metric performed in this project are:
 
-Sno.     Recommendation kind Prediction          Recommended Item Selection              Recommendation System Type
-1.        Item Recommendation                     From Rated Items                        Collaborative User Based Filtering
-2.        Related Items                           From Rated Items                        Matrix Factorization on Item-factor
-3.        Rating Prediction                       User-Item Based                         Rating Prediction           
-4.        Related Users                           From Users that Rated Items             Matrix Factorization on User-factor
-5.        Item Recommendation                     From All Items                          Content Based Filtering
-6.        Related Items                           From All Items                          Collaborative Item Based Filtering
+Sno.    Recommendation kind Prediction          Recommended Item Selection              Recommendation System Type
+1.     Item Recommendation            From Rated Items             Collaborative User Based Filtering
+2.     Related Items                  From Rated Items             Matrix Factorization on Item-factor
+3.     Rating Prediction              User-Item Based              Rating Prediction           
+4.     Related Users                  From Users that Rated Items  Matrix Factorization on User-factor
+5.     Item Recommendation            From All Items               Content Based Filtering
+6.     Related Items                  From All Items               Collaborative Item Based Filtering
 
 To evaluate the accuracy of the predictions the Evaluate Recommender module compares the predictions of a recommendation model with the corresponding “ground truth” data by computing the average normalized discounted cumulative gain (NDCG) for each model.The training data is approximately 225,000 ratings for 15,742 movies by 26,770 users.This project utilizes collaborative and content-based filtering and matrix factorization to create a Movie Recommendation System.Now, the ellaboration about different filtering and Azure Webservice is created for two metrics listed above.
 
@@ -113,9 +113,10 @@ The above-mentioned factor is only a latent factor that captures the similarity 
 
 For matrix factorization of the recommender system, the SVD technique was utilised. The recommendation model is transformed into an optimization problem, and measures like Root Mean Squared Error are used to assess how well we are at predicting a user's rating of an item (RMSE). SVD uses latent variables to reduce the dimensions of our user-item interaction matrix. Users and things are mapped in a latent space with dimension d, which helps us better comprehend their connection.This approach utilized Related Item type as kind of Recommendation prediction and Recommendation item selection is done from Rated Items in the Score Matchbox of the Recommender Module for the Item-factor Matrix.And Related Users type as kind of Recommendation prediction and Recommendation item selection is done from Users tha rated Items in the Score Matchbox of the Recommender Module for the User-factor Matrix.The output of these specifications of both metrics is shown.
 
-![2022-03-12 (8)](https://user-images.githubusercontent.com/69427575/158028324-e93b62ac-e1d2-4cb5-867f-8cb27a12ce0d.png)
+![2022-03-12 (11)](https://user-images.githubusercontent.com/69427575/158037131-ba2478da-12b1-4187-b319-da2c1ed375e2.png)
 
-![2022-03-12 (10)](https://user-images.githubusercontent.com/69427575/158028329-3d3f8f38-9db5-4036-b07a-9e9adc1da8fc.png)
+![2022-03-12 (12)](https://user-images.githubusercontent.com/69427575/158037137-05256c1e-d55e-44dc-8a0f-e79b00e7e4ac.png)
+
 
 There may be valuable characteristics in the data, such as a User X who is a girl and a teen who enjoys comedies and female-oriented films. The Princess Diaries is a wonderful choice since it is hilarious and female-oriented. We do not, however, hand-code these characteristics; instead, we let the model to uncover these underlying representations of user preferences and item properties.
 
