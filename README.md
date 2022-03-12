@@ -53,7 +53,7 @@ https://gallery.cortanaintelligence.com/Experiment/Movie-Recommendation-Using-Co
 ### Limitations of Content-Based Recommender Systems
 - We utilised a movie synopsis, genre, and keywords in this example. These hand-engineered elements determine the quality of the advice, which necessitates a fair deal of topic knowledge.
 
-- The model has no method of recommending something to the user that is outside of their interests. It is unable to recognise tastes and make suggestions across genres.
+-  The model has no method of recommending something to the user that is outside of their interests. It is unable to recognise tastes and make suggestions across genres.
 
 ### 2) Collaborative Filtering Recommender Systems
 The movies advised using the first method aren't truly customised since content-based recommendation algorithms don't account for a user's unique preferences and prejudices. Because the suggestions are entirely based on a single item, two people with completely diverse interests will obtain the same results if they share one common interest.
