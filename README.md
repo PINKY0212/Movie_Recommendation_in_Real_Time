@@ -140,4 +140,7 @@ There may be valuable characteristics in the data, such as a User X who is a gir
 
 - Content-Based Recommender.ipynb file has code for Content-Based Recommender System which is made on Kaggle using kaggle dataset.This uses Vectorizer for filtering data and def function for recommendation check.
 
+![ss13](https://user-images.githubusercontent.com/69427575/158031135-7d7f8c1a-f916-441f-ba0a-75706a1546a5.PNG)
+
+
 *Note: All the datasets used in this project is also available in this repositery.*
