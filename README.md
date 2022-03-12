@@ -12,12 +12,12 @@ There are primarily two techniques for building recommendation engines, the othe
 The Six Types of metric performed in this project are:
 
 Sno.     Recommendation kind Prediction          Recommended Item Selection              Recommendation System Type
-1        Item Recommendation                     From Rated Items                        Collaborative User Based Filtering
-2        Related Items                           From Rated Items                        Matrix Factorization on Item-factor
-3        Rating Prediction                       User-Item Based                         Rating Prediction           
-4        Related Users                           From Users that Rated Items             Matrix Factorization on User-factor
-5        Item Recommendation                     From All Items                          Content Based Filtering
-6        Related Items                           From All Items                          Collaborative Item Based Filtering
+1.        Item Recommendation                     From Rated Items                        Collaborative User Based Filtering
+2.        Related Items                           From Rated Items                        Matrix Factorization on Item-factor
+3.        Rating Prediction                       User-Item Based                         Rating Prediction           
+4.        Related Users                           From Users that Rated Items             Matrix Factorization on User-factor
+5.        Item Recommendation                     From All Items                          Content Based Filtering
+6.        Related Items                           From All Items                          Collaborative Item Based Filtering
 
 To evaluate the accuracy of the predictions the Evaluate Recommender module compares the predictions of a recommendation model with the corresponding “ground truth” data by computing the average normalized discounted cumulative gain (NDCG) for each model.The training data is approximately 225,000 ratings for 15,742 movies by 26,770 users.This project utilizes collaborative and content-based filtering and matrix factorization to create a Movie Recommendation System.Now, the ellaboration about different filtering and Azure Webservice is created for two metrics listed above.
 
