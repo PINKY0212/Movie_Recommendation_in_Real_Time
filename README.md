@@ -1,4 +1,4 @@
-# Product_Recommendation_in_Real_Time
+# Movie_Recommendation_in_Real_Time
 
 A Recommender System is a machine learning algorithm that predicts a user's future preferences for a set of offers personalized recommendations based on that prediction.It's similar to a firm salesperson who understands what a consumer could appreciate based on their past purchases and preferences. Every program you use on the internet records your behaviour, including how you interact with things, what you look for, who you communicate with, and so on.
 
